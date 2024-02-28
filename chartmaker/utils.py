@@ -48,7 +48,7 @@ def get_plot(x,y):
     plt.ylabel('price')
     plt.tight_layout()
     graph = get_graph()
-    plt.savefig('C:/sem4project/chartmaker/static/img1.png')
+    # plt.savefig('C:/sem4project/chartmaker/static/img1.png')
     return graph
 
 def bar_plot(x,y):
