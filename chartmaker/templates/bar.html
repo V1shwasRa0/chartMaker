@@ -1,0 +1,70 @@
+<html>
+    {% load static %}
+    <body>
+        <h1>Bar Chart</h1>
+        Home Page
+        <form action="insertview">
+            <center>
+                <h3>Enter Object Name: </h3>
+                <input type="text" name="n1">
+                <h3>Enter Object Price: </h3>
+                <input type="text" name="n2"><br><br>
+                <input type="submit" value="Insert">
+            </center>
+        </form>
+        {{msg}}
+        <form action="bar_plot_view">
+            <center>
+                <input type="submit" value="Plot">
+            </center>
+        </form>
+
+
+        {% block content %}
+        {% if chart %}
+            <img src="data:image/png;base64, {{chart|safe}}">
+        {% endif %}
+        {% endblock content %}
+
+
+        <!-- <form action="export_view" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <center>
+                <input type="file" name="image"><br>
+                <input type="submit" value="Export">
+            </center>
+        </form> -->
+        
+
+        <!-- <form action="dis_view">
+            <center>
+                <input type="submit" value="display db">
+            </center>
+        </form>
+        {% for p in products %}
+        {{p.id}}
+        {% if p.image_field %}
+        <img src="{{p.image_field.url}}">
+        {% endif %}
+        {% endfor %} -->
+
+        <form action="download_view">
+            <center>
+                <input type="submit" value="downlaod image">
+            </center>
+        </form>
+
+        <form action="home">
+            <center>
+                <input type="submit" value="Home">
+            </center>
+        </form>
+
+        <form action="pie">
+            <center>
+                <input type="submit" value="Pie">
+            </center>
+        </form>
+
+    </body>
+</html>
